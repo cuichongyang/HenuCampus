@@ -100,6 +100,21 @@
             android:logo="@drawable/logotemp"
             android:label="@string/notice_name">
         </activity>
+        <activity 
+            android:name="com.henucampus.main.ForumActivity"
+            android:logo="@drawable/logotemp"
+            android:label="@string/forum_name">
+        </activity>
+        <activity 
+            android:name="com.henucampus.main.SecondaryActivity"
+            android:logo="@drawable/logotemp"
+            android:label="@string/secondary_name">
+        </activity>
+        <activity 
+            android:name="com.henucampus.main.NoticeItemActivity"
+            android:logo="@drawable/logotemp"
+            android:label="@string/noticeitem_name">
+        </activity>
         
     </application>
 

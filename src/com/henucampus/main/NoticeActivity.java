@@ -15,6 +15,9 @@ import com.henucampus.object.Notice;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -30,6 +33,10 @@ public class NoticeActivity extends SherlockActivity {
 		getSupportActionBar().setDisplayShowTitleEnabled(true);//设置标题文字显示
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//设置标题栏返回按钮, 那么如何响应呢,
          														//也是重写onOptionsItemSelected() ，这个返回键的id是android.R.id.home。
+        NoticeList = (ListView) findViewById(R.id.Noticelist);
+        
+        
+        
         searchNotice();
 	}
 
@@ -64,7 +71,7 @@ public class NoticeActivity extends SherlockActivity {
 		query.order("-createdAt");
 		query.findObjects(this, new FindListener<Notice>() {
 			@Override
-			public void onSuccess(List<Notice> notices) {
+			public void onSuccess(final List<Notice> notices) {
 				List<Map<String, Object>> datalist = new ArrayList<Map<String, Object>>();
 				for (int i = 0; i < notices.size(); i++) {
 					Map<String, Object> dataitem = new HashMap<String, Object>();
@@ -76,8 +83,19 @@ public class NoticeActivity extends SherlockActivity {
 				NoticeAdapter = new SimpleAdapter(NoticeActivity.this, datalist,
 						R.layout.item_notice, new String[] { "title","from","createAt" },
 						new int[] { R.id.noticetitle, R.id.noticefrom,R.id.noticecreateAt });
-				NoticeList = (ListView) findViewById(R.id.Noticelist);
 				NoticeList.setAdapter(NoticeAdapter);
+				
+				NoticeList.setOnItemClickListener(new OnItemClickListener(){
+					@Override
+					public void onItemClick(AdapterView<?> parent, View view, int position,
+							long id) {
+						Intent intent_item = new Intent();
+						intent_item.setClass(NoticeActivity.this, NoticeItemActivity.class);
+						intent_item.putExtra("position", notices.get(position).getObjectId());
+		                startActivity(intent_item);
+					}
+		        });
+				
 			}
 
 			@Override

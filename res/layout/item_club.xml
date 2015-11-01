@@ -12,6 +12,7 @@
             android:id="@+id/clubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#ff0000"
             android:textSize="20sp">
         </TextView>
         <TextView 

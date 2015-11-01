@@ -1,69 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F0F3F6"
-     >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/page2_background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:scrollbars="vertical" >
 
-    
-    <TextView android:id="@+id/tv_shezhi"
-		     android:layout_width="match_parent"
-		     android:layout_height="30dp"
-		     android:gravity="center"
-		     android:text="个人设置"/>
-    
-    <LinearLayout style="@style/wrap_layout" >
-        <!-- 上圆角-->
-        <LinearLayout style="@style/top_layout">
-            <TextView style="@style/usertext" android:text="个性签名" />
-              <ImageView style="@style/img_arrow"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_shezhi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="个人设置"
+            android:textSize="20sp" />
+
+        <LinearLayout style="@style/wrap_layout" >
+            <!-- 上圆角 -->
+            <LinearLayout style="@style/top_layout" >
+                <TextView
+                    style="@style/usertext"
+                    android:text="我的资料" />
+                <ImageView style="@style/img_arrow" />
+            </LinearLayout>
+
+            <!-- 分割线 -->
+            <View style="@style/bg_line" />
+            
+            <!-- 下圆角 -->
+            <LinearLayout style="@style/bottom_layout" >
+                <TextView
+                    style="@style/usertext"
+                    android:text="我的消息" />
+                <ImageView style="@style/img_arrow" />
+            </LinearLayout>
         </LinearLayout>
-        
-        <!-- 分割线 -->
-          <View style="@style/bg_line"/>
-          <!-- 无圆角-->
-       <LinearLayout style="@style/mid_layout">
-            <TextView style="@style/usertext" android:text="我的资料" />
-              <ImageView style="@style/img_arrow"/>
+
+        <TextView
+            android:id="@+id/tv_fuzhzu"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="辅助"
+            android:textSize="20sp" />
+        <!-- 全圆角 -->
+        <LinearLayout style="@style/wrap_layout" >
+            <!-- 上圆角 -->
+            <LinearLayout style="@style/top_layout" >
+                <TextView
+                    style="@style/usertext"
+                    android:text="办公电话" />
+                <ImageView style="@style/img_arrow" />
+            </LinearLayout>
+
+            <!-- 分割线 -->
+            <View style="@style/bg_line" />
+            
+            <!-- 无圆角 -->
+            <LinearLayout style="@style/mid_layout" >
+                <TextView
+                    style="@style/usertext"
+                    android:text="校历" />
+                <ImageView style="@style/img_arrow" />
+            </LinearLayout>
+
+            <!-- 分割线 -->
+            <View style="@style/bg_line" />
+            
+            <!-- 下圆角 -->
+            <LinearLayout style="@style/bottom_layout" >
+                <TextView
+                    style="@style/usertext"
+                    android:text="校园地图" />
+                <ImageView style="@style/img_arrow" />
+            </LinearLayout>
         </LinearLayout>
-             <View style="@style/bg_line"/>
-          <!-- 下圆角-->
-       <LinearLayout style="@style/bottom_layout">
-            <TextView style="@style/usertext" android:text="消息通知" />
-              <ImageView style="@style/img_arrow"/>
+
+        <TextView
+            android:id="@+id/tv_guanyu"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="关于"
+            android:textSize="20sp" />
+        <!-- 全圆角 -->
+        <LinearLayout style="@style/wrap_layout" >
+            <LinearLayout style="@style/single_layout" >
+                <TextView
+                    style="@style/usertext"
+                    android:text="关于本软件" />
+                <ImageView style="@style/img_arrow" />
+            </LinearLayout>
         </LinearLayout>
-             
     </LinearLayout>
 
-    <TextView android:id="@+id/tv_shezhi"
-		     android:layout_width="match_parent"
-		     android:layout_height="30dp"
-		     android:gravity="center"
-		     android:text="辅助"/>
-     <!-- 全圆角-->
-    <LinearLayout style="@style/wrap_layout">
-        <LinearLayout style="@style/single_layout">
-            <TextView style="@style/usertext" android:text="辅助功能"/>
-            <ImageView style="@style/img_arrow"/>
-        </LinearLayout>
-        
-    </LinearLayout>
-    
-    
-    
-    <TextView android:id="@+id/tv_shezhi"
-		     android:layout_width="match_parent"
-		     android:layout_height="30dp"
-		     android:gravity="center"
-		     android:text="关于"/>
-    <!-- 全圆角-->
-    <LinearLayout style="@style/wrap_layout">
-        <LinearLayout style="@style/single_layout">
-            <TextView style="@style/usertext" android:text="关于本软件"/>
-            <ImageView style="@style/img_arrow"/>
-        </LinearLayout>
-        
-    </LinearLayout>
-    
-</LinearLayout>
+</ScrollView>

@@ -1,17 +1,18 @@
 package com.henucampus.object;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobFile;
 
 public class Lost extends BmobObject{
 	private String title;
 	private String describe;
 	private String phone;
 	private String date;
-	private Object photo;
+	private BmobFile photo;
 	public Object getPhoto() {
 		return photo;
 	}
-	public void setPhoto(Object photo) {
+	public void setPhoto(BmobFile photo) {
 		this.photo = photo;
 	}
 	public String getTitle() {

@@ -222,13 +222,14 @@ public class LostFindActivity extends SherlockActivity {
 					dataitem.put("phone", "tel:" + losts.get(i).getPhone());
 					dataitem.put("createAt", "·¢²¼ÓÚ£º"
 							+ losts.get(i).getCreatedAt());
+					dataitem.put("photo", losts.get(i).getPhoto());
 					datalist.add(dataitem);
 				}
 				LostAdapter = new SimpleAdapter(LostFindActivity.this, datalist,
 						R.layout.item_lost, new String[] { "photo", "title",
-								"date", "describe", "phone", "createAt" },
+								"date", "describe", "phone", "createAt" ,"photo"},
 						new int[] { R.id.lostphoto, R.id.losttitle, R.id.lostdate,
-								R.id.lostdescribe, R.id.lostphone, R.id.lostcreateAt });
+								R.id.lostdescribe, R.id.lostphone, R.id.lostcreateAt,R.id.lostphoto});
 				LostList = (ListView) findViewById(R.id.LostOrFindList);
 				LostList.setAdapter(LostAdapter);
 			}
